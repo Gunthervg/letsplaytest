@@ -14,18 +14,23 @@
 Username: <input type="text" name="username" ng-model="username">
 <button class="btn btn-primary" ng-click="searchcollection()">Zoek collectie</button>
 <h1>Aantal items: {{Details.totalitems}}</h1>
-<table>
-    <th>Thumbnail</th>
-    <tr ng-repeat="d in Details.items"><img src="{{d.thumbnailUrl}}"/></tr>
-    <th>Name</th>
-    <tr ng-repeat="d in Details.items">{{d.name}}</tr>
+<!--http://lorenzofox3.github.io/smart-table-website/-->
+<table st-table="Details.items" class="table table-striped">
+    <thead>
+    <tr>
+        <th>Thumbnail</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in Details.items">
+        <td><img src="{{item.thumbnailUrl}}" width="50px" height="60px"/></td>
+        <td>{{item.name}}</td>
+    </tr>
+    </tbody>
 </table>
-<ul>
-    <li ng-repeat="d in Details.items">
-        <img src="{{d.thumbnailUrl}}"/>{{ d.name}}
-    </li>
-</ul>
-<script src="js/angular-bootstrap.js" type="text/javascript"></script>
+<script src="js/angular.js" type="text/javascript"></script>
 <script src="js/hello.js"></script>
+<script src="js/smart-table.js"></script>
 </body>
 </html>

@@ -33,6 +33,9 @@ public class SearchCollectionController {
         restTemplate.setInterceptors(ris);
         restTemplate.setRequestFactory(new BufferingClientHttpRequestFactory(new SimpleClientHttpRequestFactory()));
         Items items = restTemplate.getForObject("https://www.boardgamegeek.com/xmlapi2/collection?username=gusha", Items.class);
+//        for(Item item : items.getItems()){
+//            item.setThumbnailUrl(item.getThumbnailUrl().replaceAll("//", ""));
+//        }
         Gson gson = new Gson();
         String json = gson.toJson(items);
 

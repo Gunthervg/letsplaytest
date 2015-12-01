@@ -1,4 +1,4 @@
-var module = angular.module('hello', []);
+var module = angular.module('hello', ['smart-table']);
 
 module.controller('SearchCollectionController', function ($scope, $http) {
 

@@ -37,7 +37,7 @@ public class Item {
     public String toString() {
         final StringBuilder sb = new StringBuilder("Item{");
         sb.append("name='").append(name).append('\'');
-        sb.append(", thumbnailUrl='").append(thumbnailUrl.replaceAll("//", "")).append('\'');
+        sb.append(", thumbnailUrl='").append(thumbnailUrl).append('\'');
         sb.append('}');
         return sb.toString();
     }
